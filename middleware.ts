@@ -1,5 +1,5 @@
-import {NextRequest, NextResponse} from "next/server";
-import {authGuard} from "./features/auth/components/logon/middleware/authGuard";
+import { NextRequest, NextResponse } from "next/server";
+import { authGuard } from "./features/auth/login/middleware/authGuard";
 
 export default function middleware(request: NextRequest) {
   console.log("Middleware triggered for:", request.nextUrl.pathname);
