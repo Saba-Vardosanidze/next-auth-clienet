@@ -1,10 +1,10 @@
-import { LoginFormValues } from "../LoginSchema";
+import {LoginFormValues} from "../LoginSchema";
 
 export async function login(value: LoginFormValues) {
   const res = await fetch("http://localhost:3000/api/auth/login", {
     method: "POST",
     credentials: "include",
-    headers: { "Content-Type": "application/json" },
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify(value),
   });
 

@@ -1,12 +1,12 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
-import { login } from "../api/api";
+import {useMutation} from "@tanstack/react-query";
+import {login} from "../api/api";
 
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginFormValues, loginSchema } from "../LoginSchema";
-import { useRouter } from "next/navigation";
+import {Controller, SubmitHandler, useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {LoginFormValues, loginSchema} from "../LoginSchema";
+import {useRouter} from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const Login = () => {
   const {
     handleSubmit,
     control,
-    formState: { errors, isSubmitting },
+    formState: {errors, isSubmitting},
   } = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -50,7 +50,7 @@ const Login = () => {
       <Controller
         name="email"
         control={control}
-        render={({ field }) => (
+        render={({field}) => (
           <input
             {...field}
             aria-label="email"
@@ -68,7 +68,7 @@ const Login = () => {
       <Controller
         name="password"
         control={control}
-        render={({ field }) => (
+        render={({field}) => (
           <input
             {...field}
             aria-label="password"
